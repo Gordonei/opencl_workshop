@@ -43,6 +43,7 @@
 7. Configure the notebook to serve from the data directory created earlier: `echo c.NotebookApp.notebook_dir = \'/data\' >> ~/.jupyter/jupyter_notebook_config.py`
 8. Start the notebook server: `jupyter notebook`
 9. Open a browser to `https://instance.public.ip.or.hostname:10000` to test that it is working. The browser will probably complain about the self-signed certificates.
+10. Set notebook server to start on boot: `sed '$ i\su ubuntu -c \"jupyter notebook --no-browser\"' /etc/rc.local | sudo tee /etc/rc.local`
 
 ## Resources
 * [OpenCL on Linux](https://wiki.tiker.net/OpenCLHowTo)
