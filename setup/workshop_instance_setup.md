@@ -36,7 +36,7 @@
 
 1. Install Jupyter: `sudo pip3 install jupyter`
 2. Generate a Jupyter configuration: `mkdir -p ~/.jupyter && touch ~/.jupyter/jupyter_notebook_config.py` 
-3. Generate a hashed password and add it to the Jupyter config: `python -c "from notebook.auth import passwd;ret=passwd();print("c.NotebookApp.password = u\'%s\'"%ret)" >> ~/.jupyter/jupyter_notebook_config.py`
+3. Generate a hashed password and add it to the Jupyter config: `python -c "from notebook.auth import passwd;ret=passwd();print(\"c.NotebookApp.password = u\'%s\'\"%ret)" >> ~/.jupyter/jupyter_notebook_config.py`
 4. Generate a self-signed cert using OpenSSL: `openssl req -x509 -nodes -days 36500 -newkey rsa:1024 -keyout ~/.jupyter/jupyter_key.key -out ~/.jupyter/jupyter_cert.pem`
 5. Add the key and cert to the Jupyter config: `echo c.NotebookApp.certfile = u\'/home/ubuntu/.jupyter/jupyter_cert.pem\' >> ~/.jupyter/jupyter_notebook_config.py && echo c.NotebookApp.keyfile = u\'/home/ubuntu/.jupyter/jupyter_key.key\' >> ~/.jupyter/jupyter_notebook_config.py`
 6. Open the notebook server up to all traffic on port 10000: `echo c.NotebookApp.ip = \'*\' >> ~/.jupyter/jupyter_notebook_config.py && echo c.NotebookApp.open_browser = False >> ~/.jupyter/jupyter_notebook_config.py && echo c.NotebookApp.port = 10000 >> ~/.jupyter/jupyter_notebook_config.py`
