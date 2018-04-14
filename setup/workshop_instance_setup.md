@@ -15,7 +15,7 @@
 2. Install NVIDIA support and CLInfo from Ubuntu Repos: `sudo aptitude install nvidia-361 clinfo nvidia-opencl-dev`
 3. Download the latest NVIDIA drivers: `wget http://us.download.nvidia.com/XFree86/Linux-x86_64/367.35/NVIDIA-Linux-x86_64-367.35.run`
 4. Change permissions and run: `chmod +x NVIDIA-Linux-x86_64-367.35.run && sudo ./NVIDIA-Linux-x86_64-367.35.run`
-5. Use `clino | grep 'NVIDIA CUDA'` to check that NVIDIA is appearing as one of the platforms.
+5. Use `clinfo | grep 'NVIDIA CUDA'` to check that NVIDIA is appearing as one of the platforms.
 
 ## Intel OpenCL
 
